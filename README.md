@@ -15,15 +15,17 @@ Commands used to create the npm link:
 
 To run the test, go to the node-db2-module-test folder and run `node test.js`.
 
-# DB2 Express-C
+# Sample database
 The flavour of DB2 that is used in this demo is IBM DB2 Express-C, a free
-version of DB2 offered by IBM.
+version of DB2 offered by IBM. See https://www.ibm.com/developerworks/downloads/im/db2express/ 
+for more information.
 
-See https://www.ibm.com/developerworks/downloads/im/db2express/ for more information.
+## Setup Instructions
+Your local DB2 server should already have a "SAMPLE" database. You will need to augment
+that database (or a database of your choosing):
 
-# Create the database
-This example depends on a local DB2 Express-C server that hosting a "SAMPLE" database.
-The database should contain a user and schema named "DB2APPUSER" that the necessary
-database objects. Refer to the db2-scripts directory for scripts to create required 
-objects.
+1. Create a new user (ex. Windows user) named "DB2APPUSER"
+2. Create a new schema for that user named "DB2APPUSER"
+3. Run the scripts in the db2-scripts directory to create the necessary objects in the DB2APPUSER schema
 
+A sample DB2 Express-C installation response file is also provided in the db2-scripts folder.
