@@ -2,6 +2,9 @@
 This node module contains sample code to build a Node module
 that leverages the IBM DB2 node module to connect to a DB2 database.
 
+These IBM DB2 Node instructions were used to help build this solution: 
+https://www.ibm.com/developerworks/community/blogs/pd/entry/using_ibm_db2_from_node_js4?lang=en
+
 # Build and Test Instructions
 To package the node module for use for local testing without publishing
 it to the public NPM register, run `npm pack` to create a tarball file.
