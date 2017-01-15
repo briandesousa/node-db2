@@ -20,3 +20,10 @@ The flavour of DB2 that is used in this demo is IBM DB2 Express-C, a free
 version of DB2 offered by IBM.
 
 See https://www.ibm.com/developerworks/downloads/im/db2express/ for more information.
+
+# Create the database
+This example depends on a local DB2 Express-C server that hosting a "SAMPLE" database.
+The database should contain a user and schema named "DB2APPUSER" that the necessary
+database objects. Refer to the db2-scripts directory for scripts to create required 
+objects.
+
