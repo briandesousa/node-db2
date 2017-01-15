@@ -9,6 +9,7 @@ it to the public NPM register, run `npm pack` to create a tarball file.
 A npm link has been created between node-db2-module and node-db2-module-test
 so that the latest verison of node-db2-module is always available to the test script.
 Commands used to create the npm link:
+
 1. Run `npm link` in the root of the node-db2-module folder
 2. Run `npm link node-db2-module` in the root of the node-db2-module-test folder
 
