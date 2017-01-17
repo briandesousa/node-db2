@@ -5,18 +5,22 @@ that leverages the IBM DB2 node module to connect to a DB2 database.
 These IBM DB2 Node instructions were used to help build this solution: 
 https://www.ibm.com/developerworks/community/blogs/pd/entry/using_ibm_db2_from_node_js4?lang=en
 
-# Build and Test Instructions
+# Build and link to the node-db2-module
 To package the node module for use for local testing without publishing
 it to the public NPM register, run `npm pack` to create a tarball file.
 
-A npm link has been created between node-db2-module and node-db2-module-test
+A npm link can be created between node-db2-module and node-db2-module-test
 so that the latest verison of node-db2-module is always available to the test script.
 Commands used to create the npm link:
 
 1. Run `npm link` in the root of the node-db2-module folder
 2. Run `npm link node-db2-module` in the root of the node-db2-module-test folder
 
-To run the test, go to the node-db2-module-test folder and run `node test.js`.
+# Test node-db2-module using a simple test server
+To run the test, go to the node-db2-module-test folder and run `npm start`. A simple 
+test web server will be launched using nodemon.
+
+After the server has started, launch the server in a browser at http://localhost:8080.
 
 # Sample database
 The flavour of DB2 that is used in this demo is IBM DB2 Express-C, a free

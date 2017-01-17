@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "An example of a Node module that communicates with a DB2 database using IBM DB2 node drivers",
   "main": "index.js",
-  "scripts": {
-    "test": "npm run ./test/index-test.js"
-  },
+  "scripts": {},
   "author": "Brian De Sousa <briandesousa1@gmail.com> (briandesousa1.wordpress.com)",
   "license": "ISC",
   "private": true,

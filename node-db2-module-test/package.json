@@ -3,12 +3,17 @@
   "version": "1.0.0",
   "description": "Test hardness for Node DB2 module",
   "main": "test.js",
-  "scripts": {},
+  "scripts": {
+    "start" : "nodemon test.js"
+  },
   "author": "Brian De Sousa <briandesousa1@gmail.com> (briandesousa1.wordpress.com)",
   "license": "ISC",
   "private": true,
   "dependencies": {
     "node-db2-module": "..\\node-db2-module\\",
     "require": "^2.4.20"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
   }
 }
