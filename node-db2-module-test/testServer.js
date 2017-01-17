@@ -38,17 +38,17 @@ http.createServer(function(request, response) {
 
     html = header;
     
-    for(var i = 0; i < customers.length; i++) {
-        html += "<tr><td>" + customers[i].cid + "</td>";
-        html += "<td>" + customers[i].firstName + "</td>";
-        html += "<td>" + customers[i].lastName + "</td>";
+    customers.forEach(function(customer) {
+        html += "<tr><td>" + customer.cid + "</td>";
+        html += "<td>" + customer.firstName + "</td>";
+        html += "<td>" + customer.lastName + "</td>";
         html += `
             <td>
                 <button>Edit</button>
                 <button>Delete</button>
             </td>
         </tr>`;
-    }
+    });
 
     html += footer;
 
