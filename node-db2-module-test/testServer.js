@@ -1,7 +1,11 @@
+
 console.log("Initializing node-db2-module");
 
-var node_db2_module = require('node-db2-module');
-node_db2_module.retrieveDataFromDB2();
+var nodeDB2 = require('node-db2-module');
+var dataRetriever = new nodeDB2.CustomerDataRetriever();
+var customers = dataRetriever.retrieveCustomers();
+
+console.log("Size of customer list that was retrieved: " + customers.length);
 
 var http = require('http');
 
@@ -26,20 +30,10 @@ var footer = `
 
 http.createServer(function(request, response) {
 
-    var customers = [{ 
-        cid : 1, 
-        firstName: "Mark", 
-        lastName: "Donaldson" 
-    }, {
-        cid: 2,
-        firstName: "Suzie",
-        lastName: "Doorman"
-    }];
-
-    html = header;
+    var html = header;
     
     customers.forEach(function(customer) {
-        html += "<tr><td>" + customer.cid + "</td>";
+        html += "<tr><td>" + customer.customerId + "</td>";
         html += "<td>" + customer.firstName + "</td>";
         html += "<td>" + customer.lastName + "</td>";
         html += `
