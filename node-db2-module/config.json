@@ -1,0 +1,7 @@
+{ 
+    "database_name" : "SAMPLE",
+    "database_user" : "db2appuser",
+    "database_password" : "password",
+    "database_host" : "localhost",
+    "database_port" : "50000"
+}

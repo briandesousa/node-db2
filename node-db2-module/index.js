@@ -1,6 +1,7 @@
 "use strict";
 
 var ibmdb = require('ibm_db');
+var config = require('./config');
 
 
 module.exports.Customer = class Customer {
@@ -39,7 +40,16 @@ module.exports.CustomerDataRetriever = class CustomerDataRetriever {
 
         console.log("Opening DB2 connection");
 
-        ibmdb.open("DRIVER={DB2};DATABASE=SAMPLE;UID=db2appuser;PWD=password;HOSTNAME=localhost;port=50000", function(err, conn) {
+        var connString = "DRIVER={DB2};"
+            + "DATABASE=" + config.database_name + ";"
+            + "UID=" + config.database_user + ";"
+            + "PWD=" + config.database_password + ";"
+            + "HOSTNAME=" + config.database_host + ";"
+            + "port=" + config.database_port;
+
+        console.log("DB2 connection string: " + connString);
+
+        ibmdb.open(connString, function(err, conn) {
             if(err) {
           	    console.log("DB2 connection error: ", err.message);
                 callback();
