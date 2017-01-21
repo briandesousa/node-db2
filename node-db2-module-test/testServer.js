@@ -1,13 +1,9 @@
-
 console.log("Initializing node-db2-module");
 
-var nodeDB2 = require('node-db2-module');
-var dataRetriever = new nodeDB2.CustomerDataRetriever();
-var customers = dataRetriever.retrieveCustomers();
-
-console.log("Size of customer list that was retrieved: " + customers.length);
-
 var http = require('http');
+var nodeDB2 = require('node-db2-module');
+
+var customers = [];
 
 var header = `
     <html>
@@ -23,15 +19,24 @@ var header = `
                     <th>Last Name</th>
                     <th></th>
                 <tr>`;
+
 var footer = `
             </table>
         </body>
     </html>`;
 
-http.createServer(function(request, response) {
+// retrieve customer records using node-db2-module package
+var dataRetriever = new nodeDB2.CustomerDataRetriever();
+dataRetriever.retrieveCustomers(function(customerList) {
+    console.log("Size of customer list that was retrieved: " + customerList.length);
+    customers = customerList;
+});
 
+// create web server and output customer records HTML
+http.createServer(function(request, response) {
     var html = header;
-    
+    console.log(customers.length);
+
     customers.forEach(function(customer) {
         html += "<tr><td>" + customer.customerId + "</td>";
         html += "<td>" + customer.firstName + "</td>";
@@ -45,7 +50,6 @@ http.createServer(function(request, response) {
     });
 
     html += footer;
-
     response.end(html);
 }).listen(8080, 'localhost');
 
