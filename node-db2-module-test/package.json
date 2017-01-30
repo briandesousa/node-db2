@@ -1,7 +1,7 @@
 {
   "name": "node-db2-module-test",
   "version": "1.0.0",
-  "description": "Test hardness for Node DB2 module",
+  "description": "Test harness for Node DB2 module",
   "main": "test.js",
   "scripts": {
     "start" : "nodemon testServer.js"
